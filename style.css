@@ -1,140 +1,134 @@
-/* Ensure default spacing is not too tight or too wide */
+/* === GLOBAL FONT + COLOR SETTINGS === */
+
+
+:root {
+  --font-body: 'Tinos', serif;
+  --font-title: 'Tinos', serif;
+  --font-size-body: 1rem;
+  --font-size-title: 1.8rem;
+
+  --color-bg: black;
+  --color-text: white;
+  --color-link: #ddd;
+  --color-link-hover: #aaa;
+  --color-button-bg: white;
+  --color-button-text: black;
+  --color-button-hover: #eee;
+}
+
+
+/* === BASE RESET === */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: white;
-    color: black;
-  }
-  
-  /* Center everything in the middle column */
-  .container {
-    max-width: 300px;
-    width: 100%;            /* Makes it shrink on small screens */
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  
-  /* Make name stand out */
-  h1 {
-    font-size: clamp(1.5rem, 4vw, 2rem);  /* Scales between 1.5rem–2rem */
-  }
-  .bio {
-    font-size: clamp(0.9rem, 3vw, 1rem);
-  }
-  li {
-    margin: 0.5rem 0;
-  }
-  a {
-    padding: 0.2rem 0.4rem;
-    display: inline-block;
-  }
-    
-  
-  /* Year headers */
-  h2 {
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Clean list style for project links */
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li {
-    margin: 0.3rem 0;
-  }
-  
-  /* Make links simple but obvious */
-  a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-/* === BACKGROUND IMAGE SETUP === */
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+
+/* === BACKGROUND IMAGE === */
 
 .background-image {
-    position: fixed;                /* Lock it behind everything */
-    top: 0;
-    left: 0;
-    width: 120vw;                   /* Full screen width */
-    height: 20vw;                  /* Full screen height */
-    background-image: url("quack (2).png");  /* Or "quack.png" if renamed */
-    background-position: center;    /* Centered crop */
-    background-repeat: no-repeat;
-    z-index: -1;                    /* Place behind all content */
-    
-    /* === FILTERS YOU CAN TWEAK === */
-    opacity: 0.2;                   /* Adjust to desired transparency */
-  }
-  
-  /* Ensure foreground content stays readable */
-  body {
-    background: transparent;
-    color: black;  /* Adjust if image is dark */
-  }
-  
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background: black;
-    color: white;
-  }
-  
-  .background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('your-background.jpg'); /* Optional */
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-  }
-  
-  .container {
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    min-height: 100vh;
-  }
-  
-  .bio {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .nav-button {
-    background: white;
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    transition: background 0.2s;
-  }
-  
-  .nav-button:hover {
-    background: #eee;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('your-background.jpg'); /* Optional */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+
+/* === MAIN CONTAINER === */
+
+.container {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+
+/* === TITLE + TEXT === */
+
+.site-title {
+  font-family: var(--font-title);
+  font-size: var(--font-size-title);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.bio {
+  font-size: 1.2rem;
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+
+/* === BUTTONS === */
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.nav-button {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+  font-family: var(--font-body);
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+
+.nav-button:hover {
+  background: var(--color-button-hover);
+}
+
+
+/* === PAGE TEXT AREA === */
+
+#text-content {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  text-align: left;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+.main-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;   /* Optional: rounded corners */
+  margin-top: -1rem;
+}

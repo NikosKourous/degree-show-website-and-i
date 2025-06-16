@@ -52,15 +52,15 @@ body {
 /* === MAIN CONTAINER === */
 
 .container {
-  max-width: 300px;
+  max-width: 350px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   min-height: 100vh;
 }
 
@@ -72,7 +72,7 @@ body {
   font-size: var(--font-size-title);
   font-style: italic;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.0;
 }
 
 .bio {
@@ -122,13 +122,13 @@ body {
   white-space: pre-wrap;
   line-height: 1.6;
   text-align: left;
-  font-size: 1rem;
-  padding-top: 1rem;
+  font-size: 1.2rem;
+  padding-top: 0.2rem;
 }
 .main-image {
   width: 100%;
   max-width: 300px;
   height: auto;
-  border-radius: 10px;   /* Optional: rounded corners */
-  margin-top: -1rem;
+  border-radius: 20px;   /* Optional: rounded corners */
+  margin-top: 0rem;
 }

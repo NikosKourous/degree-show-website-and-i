@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the Artist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <a href="index.html" class="nav-button">← Back</a>
+    <h1>About the Artist</h1>
+    <div id="text-content">Loading...</div>
+  </main>
+
+  <script>
+    fetch('artist.txt')
+      .then(response => response.text())
+      .then(text => {
+        const formatted = text.replace(/\n/g, '<br>');
+        document.getElementById('text-content').innerHTML = formatted;
+      });
+  </script>
+</body>
+</html>
